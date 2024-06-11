@@ -2,12 +2,14 @@ package com.gildedrose.model
 
 import com.gildedrose.Item
 
-class OtherItem(item: Item) : InventoryItem(item) {
+open class OtherItem(item: Item) : InventoryItem(item) {
     override fun updateQuality() {
-            decQualityIf(item) { item.quality > ZERO }
-            decSellin(item)
-            decQualityIf(item) { item.sellIn < ZERO && item.quality > ZERO }
+        with(item) {
+            if (quality > ZERO) quality--
+            sellIn--
+            if (sellIn < ZERO && quality > ZERO) quality--
         }
+    }
 }
 
 

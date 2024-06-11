@@ -4,11 +4,13 @@ import com.gildedrose.Item
 
 class BackstagePasses(item: Item) : InventoryItem(item) {
     override fun updateQuality() {
-        incQualityIf(item) { item.quality < MAX_QUALITY }
-        incQualityIf(item) { item.sellIn < ELEVEN && item.quality < MAX_QUALITY }
-        incQualityIf(item) { item.sellIn < SIX && item.quality < MAX_QUALITY }
-        decSellin(item)
-        resetQualityIf(item) { item.sellIn < ZERO }
+        with(item) {
+            if (quality < MAX_QUALITY) quality++
+            if(sellIn < ELEVEN && quality < MAX_QUALITY) quality++
+            if(sellIn < SIX && quality < MAX_QUALITY) quality++
+            sellIn--
+            if (sellIn < ZERO) quality = 0
+        }
     }
 }
 

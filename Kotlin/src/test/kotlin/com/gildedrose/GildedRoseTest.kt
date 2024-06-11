@@ -109,15 +109,16 @@ internal class GildedRoseTest {
                             initialItem = Item("Conjured Mana Cake", 3, 6),
                             expectedItems = listOf(
                                 Item("Conjured Mana Cake", 3, 6),
-                                Item("Conjured Mana Cake", 2, 5),
-                                Item("Conjured Mana Cake", 1, 4),
-                                Item("Conjured Mana Cake", 0, 3),
-                                Item("Conjured Mana Cake", -1, 1),
+                                Item("Conjured Mana Cake", 2, 4),
+                                Item("Conjured Mana Cake", 1, 2),
+                                Item("Conjured Mana Cake", 0, 0),
+                                Item("Conjured Mana Cake", -1, 0),
                                 Item("Conjured Mana Cake", -2, 0),
                                 Item("Conjured Mana Cake", -3, 0),
                                 Item("Conjured Mana Cake", -4, 0),
                                 Item("Conjured Mana Cake", -5, 0),
-                                Item("Conjured Mana Cake", -6, 0)
+                                Item("Conjured Mana Cake", -6, 0),
+                                Item("Conjured Mana Cake", -7, 0)
                             )
                         )
                     )
@@ -138,7 +139,5 @@ internal class GildedRoseTest {
                 app.updateQuality()
             }
         }
-
 }
-
 

@@ -25,6 +25,11 @@ tasks.test {
 
 tasks.withType<io.gitlab.arturbosch.detekt.Detekt>().configureEach {
 }
+tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile>().configureEach {
+	kotlinOptions {
+		jvmTarget = "11"
+	}
+}
 
 java {
 	targetCompatibility = JavaVersion.VERSION_11
